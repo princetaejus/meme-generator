@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+main {
+    margin-inline: auto;
+    padding: 36px;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: white;
+    padding: 20px;
+}
+
+.header > img {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.header > h1 {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.form {
+    display: grid;
+    grid-template: auto auto / 1fr 1fr;
+    gap: 17px;
+    margin-bottom: 17px;
+}
+
+.form input {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+/* Get meme button - spans full width, positioned above meme */
+.form button,
+.get-meme-btn {
+    grid-column: 1 / -1;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-height: 40px;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.form button:hover,
+.get-meme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form button:active,
+.get-meme-btn:active {
+    transform: translateY(0);
+}
+
+.form input, .form button {
+    min-height: 40px;
+    font-family: "Karla", sans-serif;
+}
+
+.meme {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.meme > img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.meme span {
+    position: absolute;
+    text-align: center;
+    margin-block: 15px;
+    padding-inline: 5px;
+    font-family: impact, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+}
+
+/* Download button - positioned below meme, full width */
+.download-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Karla", sans-serif;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.download-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Bubble text styles (for Version 2) */
+.bubble-text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: impact, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+    text-align: center;
+    max-width: 250px;
+    word-wrap: break-word;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Bubble inputs (for Version 2) */
+.bubble-inputs {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bubble-hint {
+    background: #f0f8ff;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid #711F8D;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bubble-hint kbd {
+    background: #333;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.bubble-inputs input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #D5D4D8;
+    border-radius: 5px;
+    transition: all 0.2s;
+    text-indent: 5px;
+}
+
+.bubble-inputs input:focus {
+    outline: none;
+    border-color: #711F8D;
+    box-shadow: 0 0 0 3px rgba(113, 31, 141, 0.1);
+}
+
+.bubble-inputs input.active-bubble {
+    border-color: #A818DA;
+    background: #f8f5ff;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .meme span {
+        font-size: 1.5rem;
+    }
+    
+    .bubble-text {
+        font-size: 1.2rem;
+        max-width: 180px;
+    }
+}
